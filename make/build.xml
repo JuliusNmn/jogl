@@ -9,7 +9,7 @@
       -->
 
     <target name="all" description="Build nativewindow, jogl and newt projects, incl. all junit tests " depends="init,build.nativewindow,build.jogl,build.newt,build.graphui,build.oculusvr,one.dir,tag.build,test.compile,developer-zip-archive" />
-
+    <target name="all.no_test" description="Build nativewindow, jogl and newt projects, incl. all junit tests " depends="init,build.nativewindow,build.jogl,build.newt,build.graphui,build.oculusvr,one.dir,tag.build,developer-zip-archive" />
     <target name="all.debug" description="Debug build nativewindow, jogl and newt projects, incl. all junit tests " depends="init.debug,build.nativewindow,build.jogl,build.newt,build.graphui,build.oculusvr,one.dir,tag.build,test.compile,developer-zip-archive" />
 
     <target name="all.but-archives" description="Build nativewindow, jogl and newt projects, incl. all junit tests " depends="init,build.nativewindow,build.jogl,build.newt,build.graphui,build.oculusvr,one.dir,tag.build,test.compile" />
