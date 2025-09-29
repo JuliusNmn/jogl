@@ -1354,6 +1354,8 @@
         <linkerarg value="QuartzCore" />
         <linkerarg value="-weak_framework" />
         <linkerarg value="OpenGLES" />
+        <linkerarg value="-framework" />
+        <linkerarg value="Foundation" />
       </linker>
 
       <linker id="linker.cfg.hpux.jogl" extends="linker.cfg.hpux">

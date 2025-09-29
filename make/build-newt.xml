@@ -638,6 +638,7 @@
 
       <linker id="linker.cfg.ios.amd64.newt" extends="linker.cfg.ios.amd64">
         <!-- linkerarg value="-v" / -->
+        <syslibset dir="${obj.nativewindow}" libs="nativewindow_ios" />
         <linkerarg value="-weak_framework" />
         <linkerarg value="UIKit" />
         <linkerarg value="-weak_framework" />
@@ -648,12 +649,15 @@
 
       <linker id="linker.cfg.ios.arm64.newt" extends="linker.cfg.ios.arm64">
         <!-- linkerarg value="-v" / -->
+        <syslibset dir="${obj.nativewindow}" libs="nativewindow_ios" />
         <linkerarg value="-weak_framework" />
         <linkerarg value="UIKit" />
         <linkerarg value="-weak_framework" />
         <linkerarg value="QuartzCore" />
         <linkerarg value="-weak_framework" />
         <linkerarg value="OpenGLES" /> <!-- hack to get the CAEAGL in .. -->
+        <linkerarg value="-framework" />
+        <linkerarg value="Foundation" />
       </linker>
 
       <linker id="linker.cfg.hpux.newt" extends="linker.cfg.hpux">

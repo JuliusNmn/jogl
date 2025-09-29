@@ -627,6 +627,8 @@
         <linkerarg value="QuartzCore" />
         <linkerarg value="-weak_framework" />
         <linkerarg value="OpenGLES" /> <!-- hack to inject CAEAGLLayer.self into UIView's layerClass -->
+        <linkerarg value="-framework" />
+        <linkerarg value="Foundation" />
       </linker>
 
       <linker id="linker.cfg.hpux.nativewindow" extends="linker.cfg.hpux">
