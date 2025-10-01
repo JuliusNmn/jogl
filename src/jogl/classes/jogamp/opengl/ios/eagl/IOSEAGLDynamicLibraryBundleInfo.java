@@ -50,7 +50,9 @@ public final class IOSEAGLDynamicLibraryBundleInfo extends GLDynamicLibraryBundl
     public final List<List<String>> getToolLibNames() {
         final List<List<String>> libsList = new ArrayList<List<String>>();
         final List<String> libsGL = new ArrayList<String>();
-        libsGL.add("OpenGLES"); // actually used '/Library/Frameworks/OpenGLES.framework/OpenGLES'
+        // Use full framework path for iOS - System.loadLibrary() doesn't work for frameworks
+        libsGL.add("/System/Library/Frameworks/OpenGLES.framework/OpenGLES");
+        libsGL.add("OpenGLES"); // fallback
         libsList.add(libsGL);
         return libsList;
     }
