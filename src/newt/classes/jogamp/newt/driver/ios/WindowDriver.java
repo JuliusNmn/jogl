@@ -451,7 +451,7 @@ public class WindowDriver extends WindowImpl implements MutableSurface, DriverCl
                 super.sizeChanged(false, true /* windowUnits */, width, height, true);
                 positionChanged(false,  true, x, y);
             } else {
-                OSXUtil.RunOnMainThread(false, false, new Runnable() {
+                IOSUtil.RunOnMainThread(false, false, new Runnable() {
                     @Override
                     public void run() {
                         updateSizePosInsets0(getWindowHandle(), false); // calls: sizeScreenPosInsetsChanged(..)
@@ -471,8 +471,8 @@ public class WindowDriver extends WindowImpl implements MutableSurface, DriverCl
                                         pClientLevelOnSreen.getX(), pClientLevelOnSreen.getY(),
                                         width, height, 0 != ( STATE_MASK_VISIBLE & flags));
                             } } );
-                    OSXUtil.RunOnMainThread(false, false, new Runnable() {
-                        @Override
+                            IOSUtil.RunOnMainThread(false, false, new Runnable() {
+                                @Override
                         public void run() {
                             updateSizePosInsets0(oldWindowHandle, false); // calls: sizeScreenPosInsetsChanged(..)
                         } } );
