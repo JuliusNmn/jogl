@@ -66,7 +66,7 @@ public class Debug extends PropertyAccess {
   }
 
   public static final boolean debugAll() {
-    return debugAll;
+    return true;
   }
 
   public static final boolean debugExplicit(final String subcomponent) {
