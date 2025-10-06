@@ -29,7 +29,7 @@
 #import <OpenGLES/EAGL.h>
 #import <jni.h>
 
-// #define VERBOSE_ON 1
+#define VERBOSE_ON 1
 
 #ifdef VERBOSE_ON
     #define DBG_PRINT(...) NSLog(@ __VA_ARGS__)
