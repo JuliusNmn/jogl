@@ -50,6 +50,9 @@ public class Debug extends PropertyAccess {
 
     verbose = isPropertyDefined("newt.verbose", true);
     debugAll = isPropertyDefined("newt.debug", true);
+    if (debugAll) {
+      System.err.println("Debug all is true");
+    }
     if (verbose) {
        final Package p = Package.getPackage("com.jogamp.newt");
        System.err.println("NEWT specification version " + p.getSpecificationVersion());
