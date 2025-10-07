@@ -31,11 +31,14 @@
 
 #define VERBOSE_ON 1
 
+#ifndef DBG_PRINT
 #ifdef VERBOSE_ON
+    __attribute__((used)) const char VERBOSE_FLAG_SYMBOL_IOSWINDOW[] = "VERBOSE_ON_ENABLED_IOSWINDOW";
     #define DBG_PRINT(...) NSLog(@ __VA_ARGS__)
     // #define DBG_PRINT(...) fprintf(stderr, __VA_ARGS__); fflush(stderr)
 #else
     #define DBG_PRINT(...)
+#endif
 #endif
 
 #import "ios-window-system.h"

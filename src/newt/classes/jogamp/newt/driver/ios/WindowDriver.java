@@ -190,6 +190,18 @@ public class WindowDriver extends WindowImpl implements MutableSurface, DriverCl
     protected void createNativeImpl(final boolean[] positionModified) {
         final AbstractGraphicsConfiguration cfg = GraphicsConfigurationFactory.getFactory(getScreen().getDisplay().getGraphicsDevice(), capsRequested).chooseGraphicsConfiguration(
                 capsRequested, capsRequested, capabilitiesChooser, getScreen().getGraphicsScreen(), VisualIDHolder.VID_UNDEFINED);
+
+        // Read pre-existing UIWindow and UIView handles from environment
+        String existingWindowHandle = System.getenv("NEWT_IOS_WINDOW_HANDLE");
+        String existingViewHandle = System.getenv("NEWT_IOS_VIEW_HANDLE");
+        if (existingWindowHandle != null && existingViewHandle != null) {
+            long windowPtr = Long.parseLong(existingWindowHandle);
+            long viewPtr = Long.parseLong(existingViewHandle);
+            setWindowHandle(windowPtr);
+            surfaceHandle = viewPtr;
+            // Mark as using external window
+            isOffscreenInstance = false;
+        }
         if (null == cfg) {
             throw new NativeWindowException("Error choosing GraphicsConfiguration creating window: "+this);
         }

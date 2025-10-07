@@ -25,7 +25,7 @@
  * authors and should not be interpreted as representing official policies, either expressed
  * or implied, of JogAmp Community.
  */
-
+#define VERBOSE_ON 1
 #import <inttypes.h>
 
 #import "jogamp_newt_driver_ios_WindowDriver.h"
